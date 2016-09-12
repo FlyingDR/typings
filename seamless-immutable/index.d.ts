@@ -39,6 +39,8 @@ export interface ImmutableObject<T extends Object> extends ImmutableCommons<T>, 
 }
 
 //noinspection JSUnusedGlobalSymbols
+export function Immutable<T extends ImmutableObject<Object>>(obj: T, options?: ImmutableOptions, stackRemaining?: number): T;
+//noinspection JSUnusedGlobalSymbols
 export function Immutable<T extends Array<any>>(array: T): ImmutableArray<T>;
 //noinspection JSUnusedGlobalSymbols
 export function Immutable<T extends Object>(obj: T, options?: ImmutableOptions, stackRemaining?: number): ImmutableObject<T>;
