@@ -21,13 +21,13 @@ interface ImmutableCommons<T> {
     updateIn(key: Array<string>, func: Function, ...args: any[]): T;
 }
 
-interface ImmutableArray<T extends Array<any>> extends ImmutableCommons<T>, Array<any> {
+export interface ImmutableArray<T extends Array<any>> extends ImmutableCommons<T>, Array<any> {
     flatMap(callback: Function): T;
     asObject(callback: Function): ImmutableObject<Object>;
     asMutable(options?: {deep: boolean}): Array<any>;
 }
 
-interface ImmutableObject<T extends Object> extends ImmutableCommons<T>, Object {
+export interface ImmutableObject<T extends Object> extends ImmutableCommons<T>, Object {
     merge(args: Array<Object>): T;
     merge(args: Object): T;
     without(key: string): T;
@@ -38,7 +38,7 @@ interface ImmutableObject<T extends Object> extends ImmutableCommons<T>, Object 
     instantiateEmptyObject(): Object;
 }
 
-function Immutable<T extends Array<any>>(array: T): ImmutableArray<T>;
-function Immutable<T extends Object>(obj: T, options?: ImmutableOptions, stackRemaining?: number): ImmutableObject<T>;
-
-export = Immutable;
+//noinspection JSUnusedGlobalSymbols
+export function Immutable<T extends Array<any>>(array: T): ImmutableArray<T>;
+//noinspection JSUnusedGlobalSymbols
+export function Immutable<T extends Object>(obj: T, options?: ImmutableOptions, stackRemaining?: number): ImmutableObject<T>;
