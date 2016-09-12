@@ -1,7 +1,6 @@
 {
     "name": "seamless-immutable",
     "files": [
-        "index.d.ts",
         "interfaces.d.ts"
     ],
     "main": "index.d.ts",
